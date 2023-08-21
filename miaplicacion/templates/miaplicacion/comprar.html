@@ -1,0 +1,49 @@
+{% extends 'miaplicacion/index.html' %}
+
+{% block barra %}
+
+<div class="container">
+    <h1 class="mt-4 text-center">Realizar Compra</h1>
+    <form method="post" class="mx-auto text-center">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.nombre.label_tag }}
+            {{ form.nombre }}
+        </div>
+        <div class="mb-3">
+            {{ form.apellido.label_tag }}
+            {{ form.apellido }}
+        </div>
+        <div class="mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        <div class="mb-3">
+            {{ form.telefono.label_tag }}
+            {{ form.telefono }}
+        </div>
+        <div class="mb-1">
+            <div class="mb-3">
+                <div class="text-end">{{ form.producto.label_tag }}</div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Producto</span>
+                    </div>
+                    <select class="form-select" id="{{ form.producto.id_for_label }}" name="{{ form.producto.name }}">
+                        {% for producto in form.producto.field.queryset %}
+                            <option value="{{ producto.pk }}">{{ producto.nombre }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary btn-lg">Realizar Compra</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+{% endblock barra %}

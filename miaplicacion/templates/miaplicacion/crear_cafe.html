@@ -1,0 +1,25 @@
+{% extends 'miaplicacion/index.html' %}
+{% load static %}
+
+{% block todo %}
+
+<h1 class="banner_taital">Coder Cafe</h1>
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    <div style="text-align: center;">
+    <h1>Crear Café</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+</div>
+</body>
+</html>
+
+{% endblock todo %}

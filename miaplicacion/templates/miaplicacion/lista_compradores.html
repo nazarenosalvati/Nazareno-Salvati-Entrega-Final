@@ -1,0 +1,35 @@
+{% extends 'miaplicacion/index.html' %}
+
+{% block barra %}
+<style>
+    .table {
+        background-color: white;
+    }
+</style>
+
+    <h1>Lista de Compradores</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Email</th>
+                <th scope="col">Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for comprador in compradores %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ comprador.nombre }}</td>
+                    <td>{{ comprador.apellido }}</td>
+                    <td>{{ comprador.email }}</td>
+                    <td>{{ comprador.telefono }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock barra %}

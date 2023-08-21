@@ -1,0 +1,21 @@
+{% extends 'miaplicacion/index.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <h1>Listado de Sucursales</h1>
+    <ul>
+        {% for sucursal in sucursales %}
+            <li>{{ sucursal.nombre }} - {{ sucursal.direccion }} - {{ sucursal.telefono }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+{% endblock contenido %}

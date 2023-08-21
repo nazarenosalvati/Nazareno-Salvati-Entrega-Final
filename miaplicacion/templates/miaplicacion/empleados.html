@@ -1,0 +1,47 @@
+{% extends 'miaplicacion/index.html' %}
+{% load static %}
+{% block barra %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="mt-4">Empleado: {{ user.username|upper }}</h1>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <h2>Links útiles</h2>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6 text-center">
+                <h3>LISTAS:</h3>
+                <div class="ml-4">
+                    <div class="read_bt"><a href="{% url 'lista_compradores' %}" style="background-color: white; color: orangered;">Lista de Clientes</a></div>
+                    <div class="read_bt"><a href="{% url 'lista_pedidos' %}" style="background-color: white; color: orangered;">Lista de Pedidos</a></div>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <h3>ADMIN:</h3>
+                <div class="ml-4">
+                    <div class="read_bt"><a href="{% url 'admin:index' %}" style="background-color: white; color: orangered;">Administración</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <h3>CREACIÓN:</h3>
+                <div class="ml-4">
+                    <div class="read_bt"><a href="{% url 'crear_cafe' %}" style="background-color: white; color: orangered;">Crear Café</a></div>
+                    <div class="read_bt"><a href="{% url 'crear_producto' %}" style="background-color: white; color: orangered;">Crear Producto</a></div>
+                    <div class="read_bt"><a href="{% url 'comprar' %}" style="background-color: white; color: orangered;">Crear Pedido</a></div>
+                    <div class="read_bt"><a href="{% url 'crear_sucursal' %}" style="background-color: white; color: orangered;">Crear Sucursal</a></div>
+                    <div class="read_bt" style="margin-bottom: 10px;"><a href="{% url 'crear_comprador' %}" style="background-color: white; color: orangered;">Crear Cliente</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock barra %}
+
+
+
+

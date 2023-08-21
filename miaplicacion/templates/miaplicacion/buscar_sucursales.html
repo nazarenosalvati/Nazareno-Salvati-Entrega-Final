@@ -1,0 +1,36 @@
+{% extends 'miaplicacion/index.html' %}
+{% load static %}
+
+{% block todo %}
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <div style="text-align: center;">
+    <h1>Buscar Sucursales</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+</div>
+
+    <div style="text-align: center;">
+        <h2>Resultados de la búsqueda:</h2>
+        <ul>
+            {% for sucursal in sucursales %}
+                <li>{{ sucursal.nombre }} - {{ sucursal.direccion }} - {{ sucursal.telefono }}</li>
+            {% empty %}
+                <li>No se encontraron resultados.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+
+
+{% endblock todo %}
+
+

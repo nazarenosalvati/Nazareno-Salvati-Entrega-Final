@@ -1,0 +1,11 @@
+{% extends 'miaplicacion/index.html' %}
+
+{% block barra %}
+    <div class="text-center">
+        <h1>Pedido creado exitosamente</h1>
+        <p>Tu pedido ha sido creado con éxito. ¡Gracias por tu compra!</p>
+        <a href="{% url 'inicio' %}" class="btn btn-primary">Volver a la página de inicio</a>
+        <div class="mb-2"></div> 
+    </div>
+{% endblock barra %}
+
